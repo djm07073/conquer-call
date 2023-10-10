@@ -18,12 +18,18 @@ abstract contract MultiDelegatecall is IMultiDelegatecall {
             (bool success, bytes memory returndata) = address(this)
                 .delegatecall(data[i]);
             require(success);
+
             results[i] = returndata;
         }
         return results;
     }
 }
 
+/**
+ * @title MultiTokenTransfer
+ * @author Beaker Jin
+ * @notice Supported MultiDelegatecall to transfer ERC20 tokens or approce ERC20 tokens
+ */
 contract MultiTokenTransfer is MultiDelegatecall, ERC20 {
     constructor() ERC20("MultiTokenTransfer", "MTT") {}
 
