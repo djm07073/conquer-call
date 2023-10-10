@@ -1,13 +1,12 @@
-# Sample Hardhat Project
+# Conquer EVM Call SESSION
 
-This project demonstrates a basic Hardhat use case. It comes with a sample contract, a test for that contract, and a script that deploys that contract.
+[notion site](https://blockchainvalley.notion.site/Call-03f55a6e23c44fb6a03f22f720a5e546?pvs=4)
 
-Try running some of the following tasks:
+- Call
+- StaticCall
+- DelegateCall
 
-```shell
-npx hardhat help
-npx hardhat test
-REPORT_GAS=true npx hardhat test
-npx hardhat node
-npx hardhat run scripts/deploy.ts
-```
+- Multicall
+- MultiDelegateCall
+
+
