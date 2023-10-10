@@ -5,7 +5,7 @@ import {ERC20} from "@openzeppelin/contracts/token/ERC20/ERC20.sol";
 interface IMulticall {
     function multicall(
         bytes[] calldata data
-    ) external virtual returns (bytes[] memory results);
+    ) external returns (bytes[] memory results);
 }
 
 /// Derived from OpenZeppelin's implementation
