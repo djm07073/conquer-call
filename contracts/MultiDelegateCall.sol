@@ -2,15 +2,15 @@ pragma solidity ^0.8.20;
 import {ERC20} from "@openzeppelin/contracts/token/ERC20/ERC20.sol";
 
 //https://eips.ethereum.org/EIPS/eip-6357
-interface IMulticall {
-    function multicall(
+interface IMultiDelegatecall {
+    function multiDelegatecall(
         bytes[] calldata data
     ) external returns (bytes[] memory results);
 }
 
 /// Derived from OpenZeppelin's implementation
-abstract contract Multicall is IMulticall {
-    function multicall(
+abstract contract MultiDelegatecall is IMultiDelegatecall {
+    function multiDelegatecall(
         bytes[] calldata data
     ) external virtual returns (bytes[] memory results) {
         results = new bytes[](data.length);
@@ -24,7 +24,7 @@ abstract contract Multicall is IMulticall {
     }
 }
 
-contract MultiTokenTransfer is Multicall, ERC20 {
+contract MultiTokenTransfer is MultiDelegatecall, ERC20 {
     constructor() ERC20("MultiTokenTransfer", "MTT") {}
 
     function mint() external {
